@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 public class Program {
 
+	
 		private static List<String> list1 = new ArrayList<>();
 		private static List<String> list2 = new ArrayList<>();
 		private static List<String> list3 = new LinkedList<>();
@@ -14,8 +15,9 @@ public class Program {
 		private static Scanner sc = new Scanner(System.in);
 		
 		private static String[] strings = new String[6];
-		
 		public static void main(String[] args) {
+			
+			// Adicionando elementos 
 			System.out.println("digite o valor 1 da lista 1");
 			strings[0] = sc.next();
 			sc.nextLine();
@@ -24,7 +26,7 @@ public class Program {
 			sc.nextLine();
 			
 			for(int i=0; i<2; i++) {
-				adicionar(list1, strings[i]);
+				addElement(list1, strings[i]);
 			}
 			
 			System.out.println("digite o valor 1 da lista 2");
@@ -35,26 +37,27 @@ public class Program {
 			sc.nextLine();
 			
 			for(int i=2; i<4; i++) {
-				adicionar(list2, strings[i]);
+				addElement(list2, strings[i]);
 			}
 			
 			System.out.println("digite o valor 1 da lista 3");
 			strings[4] = sc.next();
 			sc.nextLine();
-			System.out.println("digite o valor 1 da lista 3");
+			System.out.println("digite o valor 2 da lista 3");
 			strings[5] = sc.next();
 			sc.nextLine();
 			
 			for(int i=4; i<6; i++) {
-				adicionar(list3, strings[i]);
+				addElement(list3, strings[i]);
 			}
 			
 			for(String s : list2) {
-				adicionar(list1, s);
+				addElement(list1, s);
 			}
 			for(String s : list3) {
-				adicionar(list1, s);
+				addElement(list1, s);
 			}
+			
 			for(String s : list2) {
 				System.out.print(s + " : ");
 				if(list1.contains(s)) {
@@ -64,7 +67,7 @@ public class Program {
 				}
 			}
 			if(list1.contains(list3.get(0)) == true && list1.contains(list3.get(1)) == true) {
-				System.out.println("Todos os elementos da lista 1");
+				System.out.println("Todos os elementos da lista 3 estão na lista 1");
 			}
 			if(list1.equals(list2)) {
 				System.out.println("lista 1 é igual lista 2");
@@ -72,13 +75,14 @@ public class Program {
 				System.out.println("lista 1 é diferente da lista 2");
 			}
 			System.out.println("lista 1 : " + list1.get(1));
-			System.out.println("lista 2 : " + list1.get(1));
-			System.out.println("lista 3 : " + list1.get(1));
+			System.out.println("lista 2 : " + list2.get(1));
+			System.out.println("lista 3 : " + list3.get(1));
 			for(String s : list1) {
 				if(list3.contains(s)) {
 					list1.remove(s);
 				}
 			}
+			System.out.print("o tamanho da lista 1 é:");
 			System.out.println(list1.size());
 			list3.removeAll(list3);
 			if(list3.isEmpty()) {
@@ -86,6 +90,7 @@ public class Program {
 			}else {
 				System.out.println("list 2 não é vazia");
 			}
+			System.out.println("Todos elementos da lista 1");
 			for(String s : list1) {
 				System.out.println(s);
 			}
@@ -93,9 +98,15 @@ public class Program {
 			sc.close();
 		}
 		
-		public static void adicionar(List<String> lista, String valor) {
-			lista.add(valor);
+	
+		
+		private static void addElement(List<String> list, String input) throws NumberFormatException {
+		    try {
+		        int number = Integer.parseInt(input);
+		        list.add(String.valueOf(number));
+		    } catch (NumberFormatException e) {
+		        throw new RuntimeException("A entrada do usuário não é um número.");
+		    }
 		}
 
 	}
-
