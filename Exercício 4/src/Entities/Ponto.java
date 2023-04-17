@@ -1,8 +1,8 @@
 package Entities;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public interface Ponto {
-    void entrada(LocalTime hora);
-    void saida(LocalTime hora);
+    void entrada(LocalDateTime hora);
+    void saida(LocalDateTime hora);
 }
