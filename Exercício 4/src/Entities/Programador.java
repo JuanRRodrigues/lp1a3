@@ -1,19 +1,21 @@
 package Entities;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
-public class Programador extends Funcionario implements Ponto {
-    public Programador(String nome, int id, double salario) {
-        super(nome, id, salario);
+
+public class Programador extends Funcionario implements Ponto{
+
+    protected Programador(String nome, int id, double salario, LocalDateTime horaEntrada, LocalDateTime horaSaida) {
+        super(nome, id, salario, horaEntrada, horaSaida);
     }
 
-    @Override
-    public void entrada(LocalTime hora) {
-        setHoraEntrada(hora);
+    public void entradaFuncionario(LocalDateTime date) {
+        setHoraEntrada(date);
     }
 
-    @Override
-    public void saida(LocalTime hora) {
-        setHoraSaida(hora);
+    public void saidaFuncionario(LocalDateTime date) {
+        setHoraSaida(date);
     }
+   
+    
 }

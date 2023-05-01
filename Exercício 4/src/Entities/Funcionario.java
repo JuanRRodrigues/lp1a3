@@ -1,47 +1,72 @@
 package Entities;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 
 public class Funcionario {
-    private String nome;
-    private int id;
-    private double salario;
-    private LocalTime horaEntrada;
-    private LocalTime horaSaida;
+	  private String nome;
+	  private int id;
+	  private double salario;
+	  private LocalDateTime horaEntrada;
+	  private LocalDateTime horaSaida;
 
-    public Funcionario(String nome, int id, double salario) {
-        this.nome = nome;
-        this.id = id;
-        this.salario = salario;
-    }
+	  public Funcionario(String nome, int id, double salario, LocalDateTime horaEntrada, LocalDateTime horaSaida) {
+		    this.nome = nome;
+		    this.id = id;
+		    this.salario = salario;
+		    this.horaEntrada = horaEntrada;
+		    this.horaSaida = horaSaida;
+		  }
+    
+    
 
-    public String getNome() {
-        return nome;
-    }
+	  public String getNome() {
+		    return nome;
+		  }
 
-    public int getId() {
-        return id;
-    }
 
-    public double getSalario() {
-        return salario;
-    }
+		  protected void setNome(String nome) {
+		    this.nome = nome;
+		  }
 
-    public LocalTime getHoraEntrada() {
-        return horaEntrada;
-    }
 
-    public LocalTime getHoraSaida() {
-        return horaSaida;
-    }
+		  public int getId() {
+		    return id;
+		  }
 
-    public void setHoraEntrada(LocalTime horaEntrada) {
-        this.horaEntrada = horaEntrada;
-    }
 
-    public void setHoraSaida(LocalTime horaSaida) {
-        this.horaSaida = horaSaida;
-    }
+		  protected void setId(int id) {
+		    this.id = id;
+		  }
+
+
+		  public double getSalario() {
+		    return salario;
+		  }
+
+
+		  protected void setSalario(double salario) {
+		    this.salario = salario;
+		  }
+
+
+		  public LocalDateTime getHoraEntrada() {
+		    return horaEntrada;
+		  }
+
+
+		  public void setHoraEntrada(LocalDateTime horaEntrada) {
+		    this.horaEntrada = horaEntrada;
+		  }
+
+
+		  public LocalDateTime getHoraSaida() {
+		    return horaSaida;
+		  }
+
+
+		  public void setHoraSaida(LocalDateTime horaSaida) {
+		    this.horaSaida = horaSaida;
+		  }
 
     @Override
     public boolean equals(Object obj) {

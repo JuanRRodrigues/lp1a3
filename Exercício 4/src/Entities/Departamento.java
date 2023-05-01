@@ -1,10 +1,10 @@
 package Entities;
 
-import java.time.LocalTime;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-class Departamento<T extends Funcionario & Ponto> {
+public class Departamento <T extends Funcionario & Ponto> {
     private List<T> funcionarios;
     private List<Gerente> gerentes;
     
@@ -13,10 +13,10 @@ class Departamento<T extends Funcionario & Ponto> {
         gerentes = new ArrayList<>();
     }
     
-    public void adicionarFuncionario(T funcionario) {
-        funcionarios.add(funcionario);
-        if (funcionario instanceof Gerente) {
-            gerentes.add((Gerente) funcionario);
+    public void adicionarFuncionario(T f1) {
+        funcionarios.add(f1);
+        if (f1 instanceof Gerente) {
+            gerentes.add((Gerente) f1);
         }
     }
     
@@ -31,7 +31,7 @@ class Departamento<T extends Funcionario & Ponto> {
         return lista;
     }
     
-    public List<T> listarAtrasados(LocalTime hora) {
+    public List<T> listarAtrasados(LocalDateTime hora) {
         List<T> lista = new ArrayList<>();
         for (T funcionario : funcionarios) {
             if (funcionario.getHoraEntrada().compareTo(hora) > 0) {
