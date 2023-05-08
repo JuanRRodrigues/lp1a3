@@ -3,7 +3,7 @@ package Entities;
 import java.time.LocalDateTime;
 
 
-public class AnalistaJunior implements builder{
+public class FuncionarioBuilder implements builder{
     private String nome;
     private int id;
     private double salario;
@@ -11,23 +11,23 @@ public class AnalistaJunior implements builder{
     private LocalDateTime horaSaida;
 
     
-    public AnalistaJunior setNome(String nome) {
+    public FuncionarioBuilder setNome(String nome) {
         this.nome = nome;
         return this;
     }
-    public AnalistaJunior setId(int id) {
+    public FuncionarioBuilder setId(int id) {
         this.id = id;
         return this;
     }
-    public AnalistaJunior setSalario(double salario) {
+    public FuncionarioBuilder setSalario(double salario) {
         this.salario = salario;
         return this;
     }
-    public AnalistaJunior setHoraEntrada(LocalDateTime horaEntrada) {
+    public FuncionarioBuilder setHoraEntrada(LocalDateTime horaEntrada) {
         this.horaEntrada = horaEntrada;
         return this;
     }
-    public AnalistaJunior setHoraSaida(LocalDateTime horaSaida) {
+    public FuncionarioBuilder setHoraSaida(LocalDateTime horaSaida) {
         this.horaSaida = horaSaida;
         return this;
     }

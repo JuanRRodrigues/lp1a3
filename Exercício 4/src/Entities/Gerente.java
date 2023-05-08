@@ -10,10 +10,8 @@ public class Gerente extends Funcionario{
     }
 
     
-    @Override
-    public String toString() {
-        return super.toString().replaceAll("Funcionario","Gerente");
-    }
+   
+   
 
     
 }

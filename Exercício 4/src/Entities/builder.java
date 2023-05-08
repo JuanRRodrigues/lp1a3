@@ -8,5 +8,5 @@ public interface builder {
     public builder setSalario(double salario);
     public builder setHoraEntrada(LocalDateTime horaEntrada);
     public builder setHoraSaida(LocalDateTime horaSaida);
-    public Analista createFuncionario();
+    public Funcionario createFuncionario();
 }

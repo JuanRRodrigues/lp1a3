@@ -4,9 +4,11 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Departamento <T extends Funcionario & Ponto> {
-    private List<T> funcionarios;
-    private List<Gerente> gerentes;
+public class Departamento <T extends Funcionario  & Ponto> {
+	
+    public List<T> funcionarios;
+    public List<Gerente> gerentes;
+    
     
     public Departamento() {
         funcionarios = new ArrayList<>();
@@ -29,6 +31,12 @@ public class Departamento <T extends Funcionario & Ponto> {
         lista.addAll(funcionarios);
         lista.addAll(gerentes);
         return lista;
+    }
+    
+    public List<Gerente> listarGerentes() {
+        List<Gerente> listaGerente = new ArrayList<>();
+        listaGerente.addAll(gerentes);
+        return listaGerente;
     }
     
     public List<T> listarAtrasados(LocalDateTime hora) {
